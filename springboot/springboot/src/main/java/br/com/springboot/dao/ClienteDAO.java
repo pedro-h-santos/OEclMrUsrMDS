@@ -6,10 +6,12 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import br.com.springboot.model.Cliente;
 
 @Repository
+@Transactional
 public class ClienteDAO implements CRUD<Cliente, Long> {
     @PersistenceContext
     private EntityManager entityManager;
@@ -19,7 +21,7 @@ public class ClienteDAO implements CRUD<Cliente, Long> {
     }
     @Override
     public List<Cliente> lista() {
-        Query query = entityManager.createQuery("SELECT c FROM Cliente c");
+        var query = entityManager.createQuery("SELECT c FROM Cliente c");
         return (List<Cliente>) query.getResultList();
     }
     @Override
@@ -34,6 +36,8 @@ public class ClienteDAO implements CRUD<Cliente, Long> {
     public void remove(Cliente cliente){
         entityManager.remove(cliente);
     }
+ 
+   
 }
 
 

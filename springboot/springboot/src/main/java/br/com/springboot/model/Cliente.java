@@ -98,7 +98,24 @@ public class Cliente {
 	public void setAtivo(boolean ativo) {
 		this.ativo = ativo;
 	}
-	
+	//Teste
+	@Override
+	public String toString() {
+		String cliente ="";
+		cliente += "CLIENTE\n";
+		cliente +="------------------------\n";
+		cliente +="ID.......: " + this.id +"\n";
+		cliente +="Nome.....: " + this.nome +"\n";
+		cliente +="CPF......: " + this.cpf +"\n";
+		cliente +="Data Nasc: " + this.dataNasc +"\n";
+		cliente +="Sexo.....: " + this.sexo +"\n";
+		cliente +="Telefone.: " + this.telefone +"\n";
+		cliente +="Celular..: " + this.celular +"\n";
+		cliente +="Email....: " + this.email +"\n";
+		cliente +="Ativo....: " + (this.ativo ? "SIM" : "NÃO") +"\n";
+		return cliente;
+
+	}
 	
 	
 
